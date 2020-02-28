@@ -1,4 +1,59 @@
-header{
-  width: 100%;
-  background-color: #000000;
+@media only screen and (max-width: 1000px) {
+  .header{
+    width: 100%;
+    background-color: #ab342e;
+    color: white;
+    margin-bottom: 15px;
+    height: 200px;
+    flex-wrap: wrap;
+    font-family: "Times New Roman", Times, serif;
+
+  }
+
+  .header img{
+    width: 10%;
+    margin-left: 90%;
+  }
+
+  .header h1{
+    vertical-align: middle;
+
+  }
+
+  .body{
+    margin-top: 15px;
+    padding: 0;
+    margin: auto;
+    width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #e5a1aa;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+.body h2{
+  text-align: center;
+  font-weight: bold;
+}
+
+  .one{
+    width: 33%;
+    text-align: center;
+  }
+
+  .one img{
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 4px;
+    margin-top: 19%
+  }
+
+  .two{
+    width: 67%;
+  }
+}
+
+.two ol{
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
