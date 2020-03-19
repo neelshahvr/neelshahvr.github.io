@@ -10,7 +10,7 @@
   <div class="container">
     <div class="wrapper">
       <div class="header">Test JSON page</div>
-      <button class="activate">Click me to replace list
+      <button class="activate" onclick="clickMe()">Click me to replace list
         entries</button>
       <div class="content">
       </div>
@@ -19,6 +19,7 @@
   </div>
   <script>
     /* N.B. - For your lab, use the variable "countries" now available on the window space */
+
     const countries = [
       { "name": "Afghanistan", "code": "AF" },
       { "name": "Åland Islands", "code": "AX" },
@@ -264,7 +265,40 @@
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
+
     console.log("List of countries in the world", countries);
+    sessionStorage.setItem('filtered_countries', JSON.stringify(countries));
+
+    const header = document.querySelector(".header");
+    header.innerHTML = "Neel Shah's List of Countries";
+    let olist  = document.createElement("OL");
+    olist.className = "countries";
+    const content = document.querySelector(".content");
+    content.appendChild(olist);
+
+    /* This getRandomIntInclusive was taken directly from the MDN website
+    referenced in the lab instructions -
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random */
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    const json = sessionStorage.getItem('filtered_countries');
+    const parsed = JSON.parse(json);
+    const code = parsed.map((i) => i.code);
+    const country = parsed.map((i) => i.name);
+    countries.innerHTML = ' ';
+
+    function clickMe() {
+      for (let i=0; i<25; i++) {
+          const index = getRandomIntInclusive(0,242);
+          let li = document.createElement("LI");
+          li.innerText = code[index] + " " + country[index];
+          olist.appendChild(li);
+      }
+    }
   </script>
 </body>
 
