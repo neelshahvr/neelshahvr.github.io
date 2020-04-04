@@ -7,8 +7,7 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
       integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-      crossorigin=""
-    />
+      crossorigin=""/>
     <script
       src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
@@ -33,7 +32,7 @@
       </div>
     </div>
     <script>
-      const mymap = L.map('map1').setView([51.505, -0.09], 13);
+      const mymap = L.map('map1').setView([38.985926, -76.945109], 13);
       L.tileLayer(
         'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
         {
@@ -45,21 +44,35 @@
           accessToken: 'pk.eyJ1IjoibmVlbHZyc2hhaCIsImEiOiJjazhreHI4M3UwMjhsM2trendnc21rYnQxIn0.HDKC0vAWQiKhIcA01Apprw'
         }
       ).addTo(mymap);
-      const m1 = L.marker([38.985926, -76.945109]).addTo(mymap);
-      const m1_str = 'Welcome to Mckeldin Library!'
+
+      const m1 = L.circle([38.985926, -76.945109],{
+        color: 'red',
+        fillColor: '#000000',
+        fillOpacity: 0.5,
+        radius: 50
+      }).addTo(mymap);
+      const m1_str = 'Mckeldin Library';
       m1.bindPopup(m1_str).openPopup();
 
 
+      /* couldn't get array to work without messing up my map
 
-
-
-
-
-
-
-
-
-
+      const places = {
+        "Jersey Mikes": [
+          ['lat': 39.095491],
+          ['long': -76.838165]
+        ],
+        "Subway": [
+          ['lat': 38.945314],
+          ['long': -76.736114]
+        ],
+        "Papa John's": [
+          ['lat': 38.965807],
+          ['long': -76.953887]
+        ],
+      };
+      */
+      
     </script>
   </body>
 </html>
