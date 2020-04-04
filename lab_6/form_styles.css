@@ -1,5 +1,5 @@
 form {
-
+  text-align: center;
 }
 
 label {
@@ -7,9 +7,24 @@ label {
 }
 
 input, textarea {
-    
+
 }
 
 ul {
 
+}
+
+button {
+  background-color: orange;
+  height: 30px;
+  width: 70px;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  align-items: flex-start;
 }
